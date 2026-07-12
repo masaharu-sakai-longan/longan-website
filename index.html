@@ -283,6 +283,12 @@ footer{background:var(--orange);padding:32px 48px 24px;}
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
+/* ── レスポンシブ（中間幅：nav要素が詰まる対策） ── */
+@media(max-width:1080px) and (min-width:769px){
+  nav{padding:0 20px;}
+  .nav-links a{padding:0 10px;font-size:12px;}
+}
+
 /* ── レスポンシブ ── */
 @media(max-width:768px){
   .info-bar{padding:8px 16px;font-size:11px;}
