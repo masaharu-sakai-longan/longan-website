@@ -59,7 +59,7 @@ body{font-family:'Shippori Mincho',serif;color:var(--text);background:var(--crea
 .info-bar-sns svg{width:15px;height:15px;}
 
 /* ── ナビゲーション ── */
-nav{
+#navbar{
   position:fixed;
   top:36px;left:0;right:0;z-index:100;
   padding:0 48px;
@@ -71,7 +71,7 @@ nav{
   box-shadow:none;
   transition:background 0.3s ease, box-shadow 0.3s ease, top 0.15s ease;
 }
-nav.scrolled{
+#navbar.scrolled{
   top:0;
   background:#fff;
   box-shadow:0 2px 16px rgba(0,0,0,0.07);
@@ -86,7 +86,7 @@ nav.scrolled{
   letter-spacing:0.05em;
   transition:color 0.15s;
 }
-nav.scrolled .nav-logo-text{color:var(--orange);}
+#navbar.scrolled .nav-logo-text{color:var(--orange);}
 .nav-links{display:flex;justify-content:center;gap:0;list-style:none;overflow:hidden;}
 .nav-links a{
   display:block;padding:0 14px;height:64px;
@@ -95,7 +95,7 @@ nav.scrolled .nav-logo-text{color:var(--orange);}
   text-decoration:none;transition:color 0.3s;position:relative;
   white-space:nowrap;
 }
-nav.scrolled .nav-links a{color:var(--text);}
+#navbar.scrolled .nav-links a{color:var(--text);}
 .nav-links a::after{
   content:'';position:absolute;bottom:0;left:14px;right:14px;
   height:3px;background:var(--orange);
@@ -290,7 +290,7 @@ footer{background:var(--orange);padding:32px 48px 24px;}
 /* ── レスポンシブ ── */
 @media(max-width:768px){
   .info-bar{padding:8px 16px;font-size:11px;}
-  nav{padding:0 16px;}
+  #navbar{padding:0 16px;}
   .nav-links{display:none;}
   .container{padding:0 20px;}
   section{padding:60px 0;}
