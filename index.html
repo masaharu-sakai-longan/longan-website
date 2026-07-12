@@ -59,6 +59,7 @@ body{font-family:'Shippori Mincho',serif;color:var(--text);background:var(--crea
 .info-bar-sns svg{width:15px;height:15px;}
 
 /* ── ナビゲーション ── */
+/* 情報バーの高さ分(36px)下にある状態からスタート */
 nav{
   position:fixed;
   top:36px;left:0;right:0;z-index:100;
@@ -161,7 +162,7 @@ nav.scrolled .nav-links a{color:var(--text);}
 .hero-catch{font-size:14px;color:var(--brown);letter-spacing:0.1em;line-height:1.9;}
 .hero-coming{font-size:12px;color:var(--text-mid);margin-top:4px;}
 
-/* お知らせセクション */
+/* ── お知らせセクション ── */
 #information{background:var(--orange-pale);border-bottom:1px solid rgba(96,49,27,0.08);}
 .info-inner{padding:36px 48px;}
 .info-news{max-width:800px;}
@@ -173,8 +174,9 @@ nav.scrolled .nav-links a{color:var(--text);}
 .info-sub strong{color:var(--orange);font-weight:600;}
 /* ── ご予約セクション ── */
 #reservation{background:#fff;}
-.reservation-inner{text-align:center;}
-.reservation-inner .contact-desc{margin-bottom:36px;}
+/* 会社概要リンク */
+.footer-links a.company-link{color:#fff;font-weight:500;}
+.footer-links a.company-link:hover{text-decoration:underline;}
 @media (max-width:600px){.info-inner{padding:28px 20px;}}
 .hero-btn{
   display:inline-block;flex-shrink:0;
@@ -275,8 +277,6 @@ footer{background:var(--orange);padding:32px 48px 24px;}
 .footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:10px;}
 .footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
 .footer-links a:hover{color:#fff;}
-.footer-links a.company-link{color:#fff;font-weight:500;}
-.footer-links a.company-link:hover{color:#fff;text-decoration:underline;}
 .footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-align:center;}
 
 /* ── アニメーション ── */
@@ -479,7 +479,7 @@ footer{background:var(--orange);padding:32px 48px 24px;}
 <!-- ご予約 -->
 <section id="reservation">
   <div class="container">
-    <div class="reservation-inner fade-in" style="text-align:center;">
+    <div class="fade-in" style="text-align:center;">
       <p class="sec-label" style="display:inline-block;">Reservation</p>
       <h2 class="sec-title" style="margin-top:8px;">サロンご予約</h2>
       <p class="contact-desc">
@@ -548,6 +548,7 @@ footer{background:var(--orange);padding:32px 48px 24px;}
       <a href="#information">お知らせ</a>
       <a href="#reservation">ご予約</a>
       <a href="#contact">お問合せ</a>
+      <a href="https://longan-app-two.vercel.app/reserve" target="_blank">ご予約</a>
     </nav>
   </div>
   <div class="footer-links">
@@ -596,4 +597,3 @@ document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 </script>
 </body>
 </html>
-                                                                                                                                                                                                                                                                                                                                             
