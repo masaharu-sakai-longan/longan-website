@@ -84,15 +84,14 @@ nav.scrolled{
   transition:color 0.15s;
 }
 nav.scrolled .nav-logo-text{color:var(--orange);}
-/* ヒーロー上では非表示、スクロール後に表示 */
-.nav-links{display:flex;gap:0;list-style:none;opacity:0;pointer-events:none;transition:opacity 0.2s;}
-nav.scrolled .nav-links{opacity:1;pointer-events:auto;}
+.nav-links{display:flex;gap:0;list-style:none;}
 .nav-links a{
   display:block;padding:0 18px;height:64px;
   line-height:64px;font-size:13px;letter-spacing:0.1em;
-  color:var(--text);
+  color:rgba(96,49,27,0.75);
   text-decoration:none;transition:color 0.3s;position:relative;
 }
+nav.scrolled .nav-links a{color:var(--text);}
 .nav-links a::after{
   content:'';position:absolute;bottom:0;left:18px;right:18px;
   height:3px;background:var(--orange);
@@ -346,15 +345,6 @@ footer{background:var(--orange);padding:32px 48px 24px;}
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
     <span>SCROLL</span>
-  </div>
-  <div class="hero-bottom-bar">
-    <div>
-      <p class="hero-catch">「一生モノの健康法を、AI体質チェックと流体工学で解き明かす」</p>
-      <p class="hero-coming">Coming Soon: あなたの巡りを可視化する最新プログラム導入予定</p>
-    </div>
-    <a href="https://longan-app-two.vercel.app/" target="_blank" class="hero-btn">
-      まずは30秒！AI体質チェックを体験する
-    </a>
   </div>
 </section>
 
