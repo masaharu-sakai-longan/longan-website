@@ -59,12 +59,13 @@ body{font-family:'Shippori Mincho',serif;color:var(--text);background:var(--crea
 .info-bar-sns svg{width:15px;height:15px;}
 
 /* ── ナビゲーション ── */
-/* 情報バーの高さ分(36px)下にある状態からスタート */
 nav{
   position:fixed;
   top:36px;left:0;right:0;z-index:100;
   padding:0 48px;
-  display:flex;align-items:center;justify-content:space-between;
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
   height:64px;
   background:transparent;
   transition:background 0.15s ease, box-shadow 0.15s ease, top 0.15s ease;
@@ -85,16 +86,17 @@ nav.scrolled{
   transition:color 0.15s;
 }
 nav.scrolled .nav-logo-text{color:var(--orange);}
-.nav-links{display:flex;gap:0;list-style:none;}
+.nav-links{display:flex;justify-content:center;gap:0;list-style:none;}
 .nav-links a{
-  display:block;padding:0 18px;height:64px;
-  line-height:64px;font-size:13px;letter-spacing:0.1em;
+  display:block;padding:0 14px;height:64px;
+  line-height:64px;font-size:13px;letter-spacing:0.08em;
   color:rgba(96,49,27,0.75);
   text-decoration:none;transition:color 0.3s;position:relative;
+  white-space:nowrap;
 }
 nav.scrolled .nav-links a{color:var(--text);}
 .nav-links a::after{
-  content:'';position:absolute;bottom:0;left:18px;right:18px;
+  content:'';position:absolute;bottom:0;left:14px;right:14px;
   height:3px;background:var(--orange);
   transform:scaleX(0);transition:transform 0.25s;
 }
@@ -108,6 +110,7 @@ nav.scrolled .nav-links a{color:var(--text);}
   color:#fff;border:none;border-radius:40px;
   cursor:pointer;text-decoration:none;
   transition:background 0.2s,transform 0.2s;white-space:nowrap;
+  justify-self:end;
 }
 .nav-cta:hover{background:#c8911a;transform:translateY(-1px);}
 
@@ -282,12 +285,6 @@ footer{background:var(--orange);padding:32px 48px 24px;}
 /* ── アニメーション ── */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
-
-/* ── レスポンシブ（中間幅：nav要素が詰まる対策） ── */
-@media(max-width:1080px) and (min-width:769px){
-  nav{padding:0 20px;}
-  .nav-links a{padding:0 10px;font-size:12px;}
-}
 
 /* ── レスポンシブ ── */
 @media(max-width:768px){
