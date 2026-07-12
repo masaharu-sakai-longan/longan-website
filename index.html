@@ -59,15 +59,13 @@ body{font-family:'Shippori Mincho',serif;color:var(--text);background:var(--crea
 .info-bar-sns svg{width:15px;height:15px;}
 
 /* ── ナビゲーション ── */
-/* 情報バーの高さ分(36px)下にある状態からスタート */
 nav{
   position:fixed;
   top:36px;left:0;right:0;z-index:100;
-  padding:0 36px;
+  padding:0 48px;
   display:flex;align-items:center;justify-content:space-between;
   height:64px;
-  background:rgba(255,255,255,0.12);
-  backdrop-filter:blur(2px);
+  background:transparent;
   transition:background 0.15s ease, box-shadow 0.15s ease, top 0.15s ease;
 }
 nav.scrolled{
@@ -86,17 +84,17 @@ nav.scrolled{
   transition:color 0.15s;
 }
 nav.scrolled .nav-logo-text{color:var(--orange);}
-.nav-links{display:flex;gap:0;list-style:none;}
+/* ヒーロー上では非表示、スクロール後に表示 */
+.nav-links{display:flex;gap:0;list-style:none;opacity:0;pointer-events:none;transition:opacity 0.2s;}
+nav.scrolled .nav-links{opacity:1;pointer-events:auto;}
 .nav-links a{
-  display:block;padding:0 13px;height:64px;
-  line-height:64px;font-size:13px;letter-spacing:0.08em;
-  color:rgba(255,255,255,0.92);
-  text-shadow:0 1px 4px rgba(0,0,0,0.18);
+  display:block;padding:0 18px;height:64px;
+  line-height:64px;font-size:13px;letter-spacing:0.1em;
+  color:var(--text);
   text-decoration:none;transition:color 0.3s;position:relative;
 }
-nav.scrolled .nav-links a{color:var(--text);text-shadow:none;}
 .nav-links a::after{
-  content:'';position:absolute;bottom:0;left:13px;right:13px;
+  content:'';position:absolute;bottom:0;left:18px;right:18px;
   height:3px;background:var(--orange);
   transform:scaleX(0);transition:transform 0.25s;
 }
@@ -269,18 +267,18 @@ section{padding:88px 0;}
 .contact-disc{margin-top:36px;font-size:12px;color:var(--text-mid);line-height:1.9;}
 
 /* ── フッター ── */
-footer{background:var(--brown);padding:32px 48px 24px;}
-.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:16px;}
+footer{background:var(--orange);padding:32px 48px 24px;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.25);margin-bottom:16px;}
 .footer-logo{font-family:'Parisienne',cursive;font-size:22px;color:rgba(255,255,255,0.9);}
 .footer-sitemap{display:flex;flex-wrap:wrap;gap:8px 22px;}
-.footer-sitemap a{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;}
+.footer-sitemap a{font-size:12px;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;}
 .footer-sitemap a:hover{color:#fff;text-decoration:underline;}
 .footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:10px;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
-.footer-links a:hover{color:rgba(255,255,255,0.9);}
-.footer-links a.company-link{color:var(--orange);font-weight:500;}
-.footer-links a.company-link:hover{color:var(--orange-light);}
-.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-align:center;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
+.footer-links a:hover{color:#fff;}
+.footer-links a.company-link{color:#fff;font-weight:500;}
+.footer-links a.company-link:hover{color:#fff;text-decoration:underline;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-align:center;}
 
 /* ── アニメーション ── */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
