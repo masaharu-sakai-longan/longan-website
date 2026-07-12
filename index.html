@@ -161,6 +161,21 @@ nav.scrolled .nav-links a{color:var(--text);}
 }
 .hero-catch{font-size:14px;color:var(--brown);letter-spacing:0.1em;line-height:1.9;}
 .hero-coming{font-size:12px;color:var(--text-mid);margin-top:4px;}
+
+/* お知らせ・ご予約セクション */
+#information{background:var(--orange-pale);border-bottom:1px solid rgba(96,49,27,0.08);}
+.info-inner{padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+.info-news{flex:1;min-width:280px;}
+.info-label{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;display:block;margin-bottom:6px;}
+.info-list{list-style:none;margin:0;padding:0;}
+.info-list li{display:flex;align-items:baseline;gap:12px;color:var(--brown);line-height:1.7;}
+.info-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--brown-light);flex-shrink:0;}
+.info-text{font-size:14.5px;}
+.info-sub{display:block;font-size:13px;color:var(--text-mid);margin-top:2px;}
+.info-sub strong{color:var(--orange);font-weight:600;}
+.reserve-btn{display:inline-block;background:var(--brown);color:#fff;font-family:'Shippori Mincho',serif;font-size:14.5px;letter-spacing:1px;padding:12px 30px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,transform 0.25s ease;}
+.reserve-btn:hover{background:var(--brown-light);transform:translateY(-1px);}
+@media (max-width:600px){.info-inner{flex-direction:column;align-items:stretch;text-align:center;}}
 .hero-btn{
   display:inline-block;flex-shrink:0;
   font-family:'Shippori Mincho',serif;
@@ -251,12 +266,16 @@ section{padding:88px 0;}
 .contact-disc{margin-top:36px;font-size:12px;color:var(--text-mid);line-height:1.9;}
 
 /* ── フッター ── */
-footer{background:var(--orange);padding:28px 48px;display:flex;align-items:center;justify-content:space-between;}
+footer{background:var(--orange);padding:32px 48px 24px;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.25);margin-bottom:16px;}
 .footer-logo{font-family:'Parisienne',cursive;font-size:22px;color:rgba(255,255,255,0.9);}
-.footer-links{display:flex;gap:20px;}
+.footer-sitemap{display:flex;flex-wrap:wrap;gap:8px 22px;}
+.footer-sitemap a{font-size:12px;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;}
+.footer-sitemap a:hover{color:#fff;text-decoration:underline;}
+.footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:10px;}
 .footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
 .footer-links a:hover{color:#fff;}
-.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;}
+.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-align:center;}
 
 /* ── アニメーション ── */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
@@ -273,7 +292,9 @@ footer{background:var(--orange);padding:28px 48px;display:flex;align-items:cente
   .about-grid,.profile-grid{grid-template-columns:1fr;gap:32px;}
   .svc-cards{grid-template-columns:1fr;}
   .hero-bottom-bar{flex-direction:column;gap:16px;padding:20px;}
-  footer{flex-direction:column;gap:14px;text-align:center;}
+  footer{padding:28px 24px 20px;}
+  .footer-top{flex-direction:column;gap:16px;text-align:center;}
+  .footer-sitemap{justify-content:center;}
 }
 </style>
 </head>
@@ -316,7 +337,7 @@ footer{background:var(--orange);padding:28px 48px;display:flex;align-items:cente
 <!-- ヒーロー：画像を切らずに全体表示 -->
 <section id="hero">
   <img class="hero-img"
-       src="/images/home.jpg""
+       src="/images/home.jpg"
        alt="薬膳サロンLongan - 愛知県の薬膳・中医学サロン。山の霊峰を背景に「薬膳サロン Longan medicinal meal salon」のロゴ">
   <div class="hero-scroll">
     <div class="hero-scroll-line"></div>
@@ -330,6 +351,29 @@ footer{background:var(--orange);padding:28px 48px;display:flex;align-items:cente
     <a href="https://longan-app-two.vercel.app/" target="_blank" class="hero-btn">
       まずは30秒！AI体質チェックを体験する
     </a>
+  </div>
+</section>
+
+<!-- お知らせ・ご予約 -->
+<section id="information">
+  <div class="container info-inner">
+    <div class="info-news">
+      <span class="info-label">Information</span>
+      <ul class="info-list">
+        <li>
+          <span class="info-date">2026.07.12</span>
+          <span class="info-text">
+            無料体験会「はじめての薬膳」のお知らせ
+            <span class="info-sub">→ おおぶふれあいゼミナールに出店します。<strong>満員御礼</strong>。</span>
+          </span>
+        </li>
+      </ul>
+    </div>
+    <div class="info-reserve">
+      <a href="https://longan-app-two.vercel.app/reserve" target="_blank" class="reserve-btn">
+        サロンご予約
+      </a>
+    </div>
   </div>
 </section>
 
@@ -479,8 +523,20 @@ footer{background:var(--orange);padding:28px 48px;display:flex;align-items:cente
 
 <!-- フッター -->
 <footer>
-  <span class="footer-logo">Longan</span>
+  <div class="footer-top">
+    <span class="footer-logo">Longan</span>
+    <nav class="footer-sitemap" aria-label="サイトマップ">
+      <a href="#hero">トップ</a>
+      <a href="#about">サロン紹介</a>
+      <a href="#profile">プロフィール</a>
+      <a href="#services">サービス</a>
+      <a href="#information">お知らせ</a>
+      <a href="#contact">お問合せ</a>
+      <a href="https://longan-app-two.vercel.app/reserve" target="_blank">ご予約</a>
+    </nav>
+  </div>
   <div class="footer-links">
+    <a href="./company.html">運営会社：Longan合同会社</a>
     <a href="#" onclick="document.getElementById('privacy').style.display='flex';return false;">個人情報保護方針</a>
   </div>
   <p class="footer-copy">© 2026 Longan. All rights reserved.</p>
