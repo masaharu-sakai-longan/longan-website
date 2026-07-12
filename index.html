@@ -63,10 +63,11 @@ body{font-family:'Shippori Mincho',serif;color:var(--text);background:var(--crea
 nav{
   position:fixed;
   top:36px;left:0;right:0;z-index:100;
-  padding:0 48px;
+  padding:0 36px;
   display:flex;align-items:center;justify-content:space-between;
   height:64px;
-  background:transparent;
+  background:rgba(255,255,255,0.12);
+  backdrop-filter:blur(2px);
   transition:background 0.15s ease, box-shadow 0.15s ease, top 0.15s ease;
 }
 nav.scrolled{
@@ -87,14 +88,15 @@ nav.scrolled{
 nav.scrolled .nav-logo-text{color:var(--orange);}
 .nav-links{display:flex;gap:0;list-style:none;}
 .nav-links a{
-  display:block;padding:0 18px;height:64px;
-  line-height:64px;font-size:13px;letter-spacing:0.1em;
-  color:rgba(96,49,27,0.75);
+  display:block;padding:0 13px;height:64px;
+  line-height:64px;font-size:13px;letter-spacing:0.08em;
+  color:rgba(255,255,255,0.92);
+  text-shadow:0 1px 4px rgba(0,0,0,0.18);
   text-decoration:none;transition:color 0.3s;position:relative;
 }
-nav.scrolled .nav-links a{color:var(--text);}
+nav.scrolled .nav-links a{color:var(--text);text-shadow:none;}
 .nav-links a::after{
-  content:'';position:absolute;bottom:0;left:18px;right:18px;
+  content:'';position:absolute;bottom:0;left:13px;right:13px;
   height:3px;background:var(--orange);
   transform:scaleX(0);transition:transform 0.25s;
 }
@@ -162,20 +164,21 @@ nav.scrolled .nav-links a{color:var(--text);}
 .hero-catch{font-size:14px;color:var(--brown);letter-spacing:0.1em;line-height:1.9;}
 .hero-coming{font-size:12px;color:var(--text-mid);margin-top:4px;}
 
-/* お知らせ・ご予約セクション */
+/* お知らせセクション */
 #information{background:var(--orange-pale);border-bottom:1px solid rgba(96,49,27,0.08);}
-.info-inner{padding:22px 24px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
-.info-news{flex:1;min-width:280px;}
-.info-label{font-family:'Cormorant Garamond',serif;font-size:12px;letter-spacing:2px;color:var(--orange);text-transform:uppercase;display:block;margin-bottom:6px;}
+.info-inner{padding:36px 48px;}
+.info-news{max-width:800px;}
 .info-list{list-style:none;margin:0;padding:0;}
 .info-list li{display:flex;align-items:baseline;gap:12px;color:var(--brown);line-height:1.7;}
 .info-date{font-family:'DM Mono',monospace;font-size:12px;color:var(--brown-light);flex-shrink:0;}
 .info-text{font-size:14.5px;}
 .info-sub{display:block;font-size:13px;color:var(--text-mid);margin-top:2px;}
 .info-sub strong{color:var(--orange);font-weight:600;}
-.reserve-btn{display:inline-block;background:var(--brown);color:#fff;font-family:'Shippori Mincho',serif;font-size:14.5px;letter-spacing:1px;padding:12px 30px;border-radius:999px;text-decoration:none;white-space:nowrap;transition:background 0.25s ease,transform 0.25s ease;}
-.reserve-btn:hover{background:var(--brown-light);transform:translateY(-1px);}
-@media (max-width:600px){.info-inner{flex-direction:column;align-items:stretch;text-align:center;}}
+/* ── ご予約セクション ── */
+#reservation{background:#fff;}
+.reservation-inner{text-align:center;}
+.reservation-inner .contact-desc{margin-bottom:36px;}
+@media (max-width:600px){.info-inner{padding:28px 20px;}}
 .hero-btn{
   display:inline-block;flex-shrink:0;
   font-family:'Shippori Mincho',serif;
@@ -266,16 +269,18 @@ section{padding:88px 0;}
 .contact-disc{margin-top:36px;font-size:12px;color:var(--text-mid);line-height:1.9;}
 
 /* ── フッター ── */
-footer{background:var(--orange);padding:32px 48px 24px;}
-.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.25);margin-bottom:16px;}
+footer{background:var(--brown);padding:32px 48px 24px;}
+.footer-top{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.15);margin-bottom:16px;}
 .footer-logo{font-family:'Parisienne',cursive;font-size:22px;color:rgba(255,255,255,0.9);}
 .footer-sitemap{display:flex;flex-wrap:wrap;gap:8px 22px;}
-.footer-sitemap a{font-size:12px;color:rgba(255,255,255,0.85);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;}
+.footer-sitemap a{font-size:12px;color:rgba(255,255,255,0.75);text-decoration:none;letter-spacing:0.05em;transition:color 0.2s;}
 .footer-sitemap a:hover{color:#fff;text-decoration:underline;}
 .footer-links{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:10px;}
-.footer-links a{font-size:12px;color:rgba(255,255,255,0.7);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
-.footer-links a:hover{color:#fff;}
-.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.55);letter-spacing:0.1em;text-align:center;}
+.footer-links a{font-size:12px;color:rgba(255,255,255,0.6);text-decoration:none;letter-spacing:0.08em;transition:color 0.2s;}
+.footer-links a:hover{color:rgba(255,255,255,0.9);}
+.footer-links a.company-link{color:var(--orange);font-weight:500;}
+.footer-links a.company-link:hover{color:var(--orange-light);}
+.footer-copy{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,0.4);letter-spacing:0.1em;text-align:center;}
 
 /* ── アニメーション ── */
 .fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.7s ease,transform 0.7s ease;}
@@ -329,6 +334,7 @@ footer{background:var(--orange);padding:32px 48px 24px;}
     <li><a href="#about">サロン紹介</a></li>
     <li><a href="#profile">プロフィール</a></li>
     <li><a href="#services">サービス</a></li>
+    <li><a href="#reservation">ご予約</a></li>
     <li><a href="#contact">お問合せ</a></li>
   </ul>
   <a href="https://longan-app-two.vercel.app/" target="_blank" class="nav-cta">30秒 AI体質チェック</a>
@@ -354,12 +360,12 @@ footer{background:var(--orange);padding:32px 48px 24px;}
   </div>
 </section>
 
-<!-- お知らせ・ご予約 -->
+<!-- お知らせ -->
 <section id="information">
   <div class="container info-inner">
     <div class="info-news">
-      <span class="info-label">Information</span>
-      <ul class="info-list">
+      <p class="sec-label">Information</p>
+      <ul class="info-list" style="margin-top:12px;">
         <li>
           <span class="info-date">2026.07.12</span>
           <span class="info-text">
@@ -368,11 +374,6 @@ footer{background:var(--orange);padding:32px 48px 24px;}
           </span>
         </li>
       </ul>
-    </div>
-    <div class="info-reserve">
-      <a href="https://longan-app-two.vercel.app/reserve" target="_blank" class="reserve-btn">
-        サロンご予約
-      </a>
     </div>
   </div>
 </section>
@@ -478,6 +479,23 @@ footer{background:var(--orange);padding:32px 48px 24px;}
   </div>
 </section>
 
+<!-- ご予約 -->
+<section id="reservation">
+  <div class="container">
+    <div class="reservation-inner fade-in" style="text-align:center;">
+      <p class="sec-label" style="display:inline-block;">Reservation</p>
+      <h2 class="sec-title" style="margin-top:8px;">サロンご予約</h2>
+      <p class="contact-desc">
+        ご希望の日時をオンラインでお選びいただけます。<br>
+        ご不明な点はInstagramまたはLINEからお気軽にご相談ください。
+      </p>
+      <a href="https://longan-app-two.vercel.app/reserve" target="_blank" class="contact-btn">
+        予約ページへ →
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- お問合せ -->
 <section id="contact">
   <div class="container">
@@ -531,12 +549,12 @@ footer{background:var(--orange);padding:32px 48px 24px;}
       <a href="#profile">プロフィール</a>
       <a href="#services">サービス</a>
       <a href="#information">お知らせ</a>
+      <a href="#reservation">ご予約</a>
       <a href="#contact">お問合せ</a>
-      <a href="https://longan-app-two.vercel.app/reserve" target="_blank">ご予約</a>
     </nav>
   </div>
   <div class="footer-links">
-    <a href="./company.html">運営会社：Longan合同会社</a>
+    <a href="./company.html" class="company-link">運営会社：Longan合同会社</a>
     <a href="#" onclick="document.getElementById('privacy').style.display='flex';return false;">個人情報保護方針</a>
   </div>
   <p class="footer-copy">© 2026 Longan. All rights reserved.</p>
